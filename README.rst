@@ -1,3 +1,6 @@
+Added force torque sensor to gazebo simulation (in branch release-5.2.0). Requires sawyer_description repo (https://github.com/justagist/sawyer_robot) and intera_common (https://github.com/RethinkRobotics/intera_common) of the same branch.
+
+
 Sawyer Robot
 ==============
 
