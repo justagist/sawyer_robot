@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot name="end_effector" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="gazebo" default="false"/>
+  <xacro:if value="$(arg gazebo)">
+    <xacro:property name="gazebo_tag" value="true" scope="local"/>
+  </xacro:if>
+  <xacro:unless value="$(arg gazebo)">
+    <xacro:property name="gazebo_tag" value="false" scope="local"/>
+  </xacro:unless>
+
+  <xacro:include filename="$(find intera_tools_description)/urdf/fake_ft_sensor/fake_ft_sensor.xacro" />
+  <xacro:fake_ft_sensor side="right"
+                        gazebo="${gazebo_tag}"
+                        use_connector_plate="false"/>
+</robot>
